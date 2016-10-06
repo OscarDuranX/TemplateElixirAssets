@@ -1,6 +1,6 @@
 const elixir = require('laravel-elixir');
 
-// require('laravel-elixir-vue-2');
+require('laravel-elixir-vue-2');
 
 /*
  |--------------------------------------------------------------------------
@@ -15,5 +15,8 @@ const elixir = require('laravel-elixir');
 
 elixir(mix => {
     mix.sass('app.scss')
-       .webpack('app.js');
+        .webpack('app.js')
+        .browserSync({
+        proxy: 'http://localhost:63342/TemplateElixirAssets/'
+    });
 });
